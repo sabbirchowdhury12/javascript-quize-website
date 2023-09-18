@@ -9,7 +9,151 @@
   </head>
 
   <body>
+    <main class="main">
+      <header></header>
+      <div class="container">
+        <section class="quiz-section">
+          <div class="quiz-box">
+            <h1>quize</h1>
+            <div class="quiz-header">
+              <span>quiz website</span>
+              <span class="header-score">Score: 0 / 5</span>
+            </div>
+
+            <h2 class="question-text">What does HTML stand for?</h2>
+
+            <div class="option-list">
+              <div class="option">
+                <span>A. Hyper Type Multi Language</span>
+              </div>
+              <div class="option">
+                <span>A. Hyper Type Multi Language</span>
+              </div>
+              <div class="option">
+                <span>A. Hyper Type Multi Language</span>
+              </div>
+              <div class="option">
+                <span>A. Hyper Type Multi Language</span>
+              </div>
+            </div>
+
+            <div class="quiz-footer">
+              <span class="total-question"> 1 of 5 Questions</span>
+              <button class="next-btn">Next</button>
+            </div>
+          </div>
+        </section>
+        <section class="home">
+          <div class="home-content">
+            <h1>QUIZ WEBSITE</h1>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse ad
+              incidunt minus nam porro quasi sunt! Natus aliquid temporibus rem.
+              Consectetur corrupti eveniet nihil quidem ex dolor et voluptatibus
+              expedita.
+            </p>
+            <button onclick="startQuiz()" class="start-btn">START QUIZ</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="popup-info">
+      <h2>Quiz Guide</h2>
+      <span class="info"
+        >Lorem ipsum dolor, sit amet consectetur adipisicing elit.</span
+      >
+      <span class="info"
+        >Lorem ipsum dolor, sit amet consectetur adipisicing elit.</span
+      >
+      <span class="info"
+        >Lorem ipsum dolor, sit amet consectetur adipisicing elit.</span
+      >
+      <span class="info"
+        >Lorem ipsum dolor, sit amet consectetur adipisicing elit.</span
+      >
+
+      <div class="btn-group">
+        <button onclick="exitQuiz()" class="info-btn exit-btn">Exit</button>
+        <button onclick="continueQuiz()" class="info-btn continue-btn">
+          Continue
+        </button>
+      </div>
+    </div>
+
     <script src="questions.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
+
+<!-- 
+<div class="main">
+  <div class="container">
+    <section class="quiz-section">
+      <div class="quiz-box">
+        <h1>quize</h1>
+        <div class="quiz-header">
+          <span>quiz website</span>
+          <span>Score: 0 / 5</span>
+        </div>
+
+        <h2 class="question-text">What does HTML stand for?</h2>
+
+        <div class="option-list">
+          <div class="option">
+            <span>A. Hyper Type Multi Language</span>
+          </div>
+          <div class="option">
+            <span>A. Hyper Type Multi Language</span>
+          </div>
+          <div class="option">
+            <span>A. Hyper Type Multi Language</span>
+          </div>
+          <div class="option">
+            <span>A. Hyper Type Multi Language</span>
+          </div>
+        </div>
+
+        <div class="quiz-footer">
+          <span class="total-question"> 1 of 5 Questions</span>
+          <button class="next-btn">Next</button>
+        </div>
+      </div>
+    </section>
+    <section class="start-section">
+      <div class="start-quiz">
+        <h2>QUIZ WEBSITE</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur <br />
+          adipisicing elit. Esse ad incidunt minus nam porro quasi sunt!
+          Natus aliquid temporibus rem. Consectetur <br />corrupti eveniet
+          nihil quidem ex dolor et voluptatibus expedita.
+        </p>
+        <button onclick="startQuiz()" class="start-btn">START QUIZ</button>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="popup-info">
+  <h2>Quiz Guide</h2>
+  <span class="info"
+    >Lorem ipsum dolor, sit amet consectetur adipisicing elit.</span
+  >
+  <span class="info"
+    >Lorem ipsum dolor, sit amet consectetur adipisicing elit.</span
+  >
+  <span class="info"
+    >Lorem ipsum dolor, sit amet consectetur adipisicing elit.</span
+  >
+  <span class="info"
+    >Lorem ipsum dolor, sit amet consectetur adipisicing elit.</span
+  >
+
+  <div class="btn-group">
+    <button onclick="exitQuiz()" class="info-btn exit-btn">Exit</button>
+    <button onclick="continueGame()" class="info-btn continue-btn">
+      Continue
+    </button>
+  </div>
+</div> -->
