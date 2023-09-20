@@ -11,17 +11,22 @@ let resultBox = document.querySelector(".result-box");
 let scoreText = document.querySelector(".score-text");
 let circularProgress = document.querySelector(".circular-progress");
 let progressValue = document.querySelector(".progress-value");
+let tryAgain = document.querySelector(".try-btn");
+let homeBtn = document.querySelector(".home-btn");
 
+// ---------start-button----------
 function startQuiz() {
   popupInfo.classList.add("active");
   main.classList.add("active");
 }
+
+// ---------exit-button---------
 function exitQuiz() {
   popupInfo.classList.remove("active");
   main.classList.remove("active");
 }
 
-//continue buton
+// ---------continue-button---------
 function continueQuiz() {
   quizSection.classList.add("active");
   popupInfo.classList.remove("active");
@@ -36,18 +41,21 @@ let questionCount = 0;
 let questionNo = 1;
 let score = 0;
 
+// ---------next-button---------
 nextBtn.onclick = () => {
   if (questionCount < questions.length - 1) {
     questionCount++;
     questionNo++;
     showQuestion(questionCount);
     questionNumber(questionNo);
+    //disabled next button untill select a option
     nextBtn.classList.remove("active");
   } else {
     showResultBox();
   }
 };
 
+// ---------show question function---------
 function showQuestion(index) {
   questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
 
@@ -61,11 +69,13 @@ function showQuestion(index) {
 
   const option = document.querySelectorAll(".option");
 
+  //set onclick function each option
   for (let i = 0; i < option.length; i++) {
     option[i].setAttribute("onclick", "selectedOption(this)");
   }
 }
 
+//select option function
 function selectedOption(option) {
   const userAnswer = option.textContent;
   const correctAnswer = questions[questionCount].answer;
@@ -85,26 +95,33 @@ function selectedOption(option) {
     }
   }
 
+  //disabled all option after select a optiopn
   for (let i = 0; i < optionList.children.length; i++) {
     optionList.children[i].classList.add("disabled");
   }
 
+  //enabled a next button after select a option
   nextBtn.classList.add("active");
 }
 
+// show question number fuction
 function questionNumber(number) {
-  totalQuestion.textContent = `${number} of 5 Questions`;
+  totalQuestion.textContent = `${number} of ${questions.length} Questions`;
 }
+
+// show score function
 function showScore(score) {
   headerScore.textContent = `Score: ${score} / ${questions.length}`;
 }
 
+// show resultbox function
 function showResultBox() {
   quizBox.classList.remove("active");
   resultBox.classList.add("active");
-  scoreText.textContent = ` score ${score} out of ${questions.length}`;
+  scoreText.textContent = `Your score ${score} out of ${questions.length}`;
 
-  let progressStartValue = 0;
+  //progress bar
+  let progressStartValue = -1;
   let progressEndValue = (score / questions.length) * 100;
   let speed = 20;
 
@@ -120,3 +137,36 @@ function showResultBox() {
     }
   }, speed);
 }
+
+//try again button
+tryAgain.onclick = () => {
+  resultBox.classList.remove("active");
+  quizSection.classList.add("active");
+  popupInfo.classList.remove("active");
+  main.classList.remove("active");
+  quizBox.classList.add("active");
+  nextBtn.classList.remove("active");
+  showQuestion(0);
+  questionNumber(1);
+  showScore(0);
+  questionCount = 0;
+  questionNo = 1;
+  score = 0;
+};
+
+//home button
+homeBtn.onclick = () => {
+  resultBox.classList.remove("active");
+  quizSection.classList.remove("active");
+  popupInfo.classList.remove("active");
+  main.classList.remove("active");
+  popupInfo.classList.remove("active");
+  main.classList.remove("active");
+  nextBtn.classList.remove("active");
+  showQuestion(0);
+  questionNumber(1);
+  showScore(0);
+  questionCount = 0;
+  questionNo = 1;
+  score = 0;
+};

@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
   margin: 0;
@@ -14,7 +14,7 @@ body {
 }
 
 .main {
-  background-color: rgb(33, 1, 1);
+  background: #141010;
   min-height: 100vh;
   transition: 0.2 ease;
 }
@@ -131,6 +131,7 @@ body {
   align-items: center;
   padding: 20px 0;
   border-bottom: 2px solid #c40094;
+  margin-bottom: 30px;
 }
 
 .quiz-header span {
@@ -183,6 +184,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 30px;
+  padding: 20px 0;
+  border-top: 2px solid #c40094;
 }
 
 .quiz-box .total-question {
@@ -277,8 +281,50 @@ body {
 
 .circular-progress .progress-value {
   position: relative;
-  font-style: 45px;
+  font-size: 40px;
   font-weight: 600;
+}
+
+.parcent-container .score-text {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0 10px;
+}
+
+.buttons .button {
+  width: 130px;
+  height: 45px;
+  background: #c40094;
+  border: 2px solid #c40094;
+  outline: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.buttons .button:nth-child(1) {
+  background: transparent;
+  color: #c40094;
+}
+.buttons .button:nth-child(1):hover {
+  background: #c40094;
+  color: #fff;
+}
+.buttons .button:nth-child(2):hover {
+  background: #950170;
+  border-color: #950170;
 }
 
 /* ------------pop up info---------------- */
@@ -288,7 +334,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.9);
-  width: 500px;
+  width: 600px;
   background: #fff;
   padding: 10px 25px;
   border-radius: 6px;
@@ -308,11 +354,11 @@ body {
 }
 
 .popup-info .info {
-  display: inline-block;
+  display: block;
   font-size: 16px;
   color: #333;
   font-weight: 500;
-  margin: 4px 0;
+  margin: 6px 0;
 }
 
 .popup-info .btn-group {
