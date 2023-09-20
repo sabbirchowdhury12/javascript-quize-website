@@ -109,6 +109,15 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px 30px;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: 0.5s ease-in;
+  transition-delay: 0.2s;
+}
+
+.quiz-section .quiz-box.active {
+  opacity: 1;
+  transform: scale(1);
 }
 .quiz-box h1 {
   font-size: 32px;
@@ -156,6 +165,20 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.1);
 }
+
+.option-list .option.correct {
+  background: #09001d;
+  color: #00a63d;
+  border-color: #00a63d;
+}
+.option-list .option.disabled {
+  pointer-events: none;
+}
+.option-list .option.wrong {
+  background: #09001d;
+  color: #a60045;
+  border-color: #a60045;
+}
 .quiz-box .quiz-footer {
   display: flex;
   align-items: center;
@@ -178,15 +201,86 @@ body {
   font-style: 16px;
   font-weight: 600;
   cursor: pointer;
-  /* pointer-events: none; */
+  pointer-events: none;
   transition: 0.2s;
 }
 
-.quiz-box .next-btn:hover {
-  border: #950170;
-  background: #950170;
+.quiz-box .next-btn.active {
+  pointer-events: all;
+  background: #c40094;
+  border: #c40094;
   color: #fff;
 }
+
+.quiz-box .next-btn.active:hover {
+  border: #950170;
+  background: #950170;
+}
+
+/* ------------result box---------------- */
+.quiz-section .result-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 500px;
+  background: transparent;
+  border: 2px solid #c40094;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s ease-in-out;
+  transition-delay: 0.2s;
+}
+
+.quiz-section .result-box.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.result-box h2 {
+  font-style: 52px;
+}
+
+.result-box .parcent-container {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0 40px;
+}
+
+.parcent-container .circular-progress {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: conic-gradient(#c40094 3deg, rgba(255, 255, 255, 0.1) 0deg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parcent-container .circular-progress::before {
+  content: "";
+  position: absolute;
+  height: 210px;
+  width: 210px;
+  background: #09001d;
+  border-radius: 50%;
+}
+
+.circular-progress .progress-value {
+  position: relative;
+  font-style: 45px;
+  font-weight: 600;
+}
+
 /* ------------pop up info---------------- */
 
 .popup-info {
